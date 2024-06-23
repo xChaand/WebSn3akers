@@ -1,11 +1,30 @@
+"use client";
+
 import Link from "next/link";
 import MaxWidthWrapper from "./MaxWidthWrapper";
-import { buttonVariants } from "./ui/button";
-import { Smartphone } from "lucide-react";
+import { Button, buttonVariants } from "./ui/button";
 
 export default function Navbar() {
   let user: Boolean = true;
   let admin: Boolean = true;
+
+  const connectWallet = async () => {
+    if (typeof window != "undefined" && typeof window.ethereum != "undefined") {
+      try {
+        /* MetaMask is installed */
+        const accounts = await window.ethereum.request({
+          method: "eth_requestAccounts",
+        });
+        console.log("connected");
+      } catch (err) {
+        console.error("no work");
+      }
+    } else {
+      /* MetaMask is not installed */
+      console.log("Please install MetaMask");
+    }
+  };
+
   return (
     <nav className="sticky z-[100] h-14 inset-x-0 top-0 w-full border-b border-gray-200 bg-white/75 backdrop-blur-lg transition-all">
       <MaxWidthWrapper>
@@ -23,6 +42,7 @@ export default function Navbar() {
                 >
                   Logout
                 </Link>
+                <Button onClick={connectWallet}>MetaMask</Button>
                 {admin && (
                   <Link
                     href="/dashboard"
