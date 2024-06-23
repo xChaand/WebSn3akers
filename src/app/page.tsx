@@ -160,12 +160,12 @@ export default function Home() {
               </div>
               <div className="text-lg leading-8">
                 <p>
-                  "I usually keep my phone together with my keys in my pocket
-                  and that led to some pretty heavy scratchmarks on all of my
-                  last phone cases. This one, besides a barely noticeable
-                  scratch on the corner,{" "}
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Consequatur exercitationem cupiditate rerum nam qui laborum
+                  ex. Ipsa dicta a in deleniti dignissimos dolore aperiam
+                  corporis? Delectus repellat ipsam libero fugiat!
                   <span className="p-0.5 bg-slate-800 text-white">
-                    looks brand new after about half a year
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   </span>
                   . I dig it."
                 </p>
